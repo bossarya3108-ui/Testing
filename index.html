@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manveon — From New Business to Digital Business</title>
+    <meta
+      name="description"
+      content="A 58-second, 9:16 Instagram Reel showing how Manveon builds the digital presence of Luxe Studio, a fictional salon."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="masthead">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">MANVEON</span>
+        </div>
+        <p class="tagline">From new business to digital business</p>
+      </header>
+
+      <section class="layout">
+        <div class="stage-wrap">
+          <div class="stage">
+            <canvas id="reel" width="1080" height="1920" aria-label="Manveon reel preview"></canvas>
+            <div class="stage-loading" id="loading">Preparing the reel…</div>
+          </div>
+
+          <div class="controls">
+            <button id="play" class="btn primary" type="button" disabled>Play</button>
+            <button id="restart" class="btn" type="button">Restart</button>
+            <div class="scrub-wrap">
+              <input id="scrub" type="range" min="0" max="58" step="0.01" value="0" aria-label="Seek" />
+              <div class="time"><span id="current">0:00.0</span> / <span id="total">0:58.0</span></div>
+            </div>
+            <button id="mute" class="btn" type="button" aria-pressed="false">Sound on</button>
+            <a id="download" class="btn ghost" href="out/manveon-reel.mp4" download hidden>Download MP4</a>
+          </div>
+          <p class="status" id="status">Rendering soundtrack…</p>
+        </div>
+
+        <aside class="chapters" aria-label="Scenes">
+          <h2>Story beats</h2>
+          <ol id="chapter-list"></ol>
+          <div class="notes">
+            <p><strong>9:16 · 1080 × 1920 · 30 fps · 58 s</strong></p>
+            <p>No voiceover. Electronic score and interface sounds are synthesised from the same timeline as the picture.</p>
+            <p>
+              Luxe Studio is a fictional demonstration brand. Optional capabilities such as AI assistance and automation are
+              configured per project.
+            </p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
