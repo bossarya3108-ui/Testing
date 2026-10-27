@@ -1,0 +1,7 @@
+node_modules/
+out/chunks/
+out/frames/
+out/stills/
+out/*.wav
+out/test-2s.mp4
+.DS_Store
