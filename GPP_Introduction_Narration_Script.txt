@@ -1,0 +1,31 @@
+GLOBAL PAYMENTS PLATFORM (GPP)
+Animated explainer - narration script
+Voice: en-GB-SoniaNeural | rate +55% | pitch -2Hz
+
+SCENE 1 - INTRODUCTION TO GPP
+
+Every day, banks process thousands of payments across countries, currencies and financial institutions. To manage these transactions efficiently, banks rely on powerful payment-processing platforms. One such platform is the Global Payments Platform, commonly known as GPP. Let's understand what it does and how it fits into the payment ecosystem.
+
+SCENE 2 - THE PAYMENT ECOSYSTEM
+
+Let's look at where GPP fits. In our project context, an incoming payment instruction can travel from the sending bank through the SWIFT network and reach the Payments Management Gateway, or PMG. PMG acts as an integration point between SWIFT and the downstream payment-processing environment. Depending on the configured flow, the payment can be directed towards the legacy IPS engine or the newer GPP platform. The migration from IPS to GPP is intended to transition payment processing onto the target platform.
+
+SCENE 3 - HOW GPP PROCESSES A PAYMENT
+
+Once the payment reaches GPP, the platform processes it through a series of steps. First, it receives the payment instruction. Next, it performs validation to check whether the message and its business data meet the required criteria. Configured business rules are then applied to determine how the payment should be handled. The transaction is subsequently routed for further processing. Finally, the platform generates or updates payment statuses so that downstream systems and operational teams can track what happened.
+
+SCENE 4 - UNDERSTANDING ISO 20022 MESSAGES
+
+To understand GPP, it is also important to understand ISO 20022 messaging. These messages provide a structured way for financial institutions to exchange payment information. For example, pacs.008 is used for a financial institution-to-financial institution customer credit transfer, while pacs.009 represents a financial institution-to-financial institution credit transfer. pacs.002 communicates payment status, pacs.004 is used for payment returns, and camt.056 is a payment cancellation request. Understanding the purpose of each message helps a Business Analyst trace payment journeys and investigate exceptions.
+
+SCENE 5 - NOSTRO, VOSTRO AND SETTLEMENT
+
+Another important concept is Nostro and Vostro accounts. A Nostro account is our bank's account maintained with another bank. A Vostro account is another bank's account maintained with us. These accounts are important in correspondent banking and cross-border settlement. Remember that sending a payment instruction and settling or posting the funds are related, but they are not necessarily the same event.
+
+SCENE 6 - EXCEPTIONS AND THE BA ROLE
+
+But not every payment is successful. A transaction may fail validation or encounter a processing exception. In such cases, the platform and surrounding processes may generate a rejection status, such as a pacs.002, depending on the applicable flow. This is where operational procedures become important. A Business Analyst needs to understand what triggered the failure, which system generated the status, what downstream impact occurred, and how the exception is investigated and resolved.
+
+SCENE 7 - CONCLUSION
+
+To become effective in payments analysis, don't just memorise message names. Understand the complete payment journey, how systems interact, how statuses are generated and what happens when something goes wrong. That is the foundation for understanding GPP from a Business Analyst's perspective.

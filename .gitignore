@@ -1,0 +1,8 @@
+node_modules/
+explainer/node_modules/
+explainer/build/
+explainer/.venv/
+__pycache__/
+*.pyc
+.DS_Store
+build_check_*.png
