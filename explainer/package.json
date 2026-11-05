@@ -1,0 +1,19 @@
+{
+  "name": "gpp-animated-explainer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GPP animated explainer video renderer",
+  "type": "commonjs",
+  "scripts": {
+    "narration": ".venv/bin/python scripts/generate_narration.py",
+    "audio": ".venv/bin/python scripts/build_audio.py",
+    "render": "bash scripts/render_all.sh",
+    "assemble": "bash scripts/assemble.sh"
+  },
+  "dependencies": {
+    "canvas": "^3.2.3",
+    "d3-geo": "^3.1.1",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  }
+}

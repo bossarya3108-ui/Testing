@@ -1,0 +1,195 @@
+1
+00:00:00,560 --> 00:00:03,182
+Every day, banks process thousands of payments across countries,
+
+2
+00:00:03,222 --> 00:00:04,994
+currencies and financial institutions.
+
+3
+00:00:05,034 --> 00:00:07,591
+To manage these transactions efficiently, banks rely on powerful
+
+4
+00:00:07,631 --> 00:00:10,446
+payment-processing platforms. One such platform is the Global Payments
+
+5
+00:00:10,486 --> 00:00:14,091
+Platform, commonly known as GPP. Let's understand what it does and how it fits
+
+6
+00:00:14,131 --> 00:00:15,569
+into the payment ecosystem.
+
+7
+00:00:16,821 --> 00:00:20,175
+Let's look at where GPP fits. In our project context, an incoming payment
+
+8
+00:00:20,215 --> 00:00:22,594
+instruction can travel from the sending bank through the SWIFT network and
+
+9
+00:00:22,634 --> 00:00:24,769
+reach the Payments Management Gateway, or PMG.
+
+10
+00:00:24,809 --> 00:00:27,519
+PMG acts as an integration point between SWIFT and the downstream
+
+11
+00:00:27,559 --> 00:00:30,148
+payment-processing environment. Depending on the configured flow,
+
+12
+00:00:30,188 --> 00:00:33,132
+the payment can be directed towards the legacy IPS engine or the newer GPP
+
+13
+00:00:33,172 --> 00:00:36,739
+platform. The migration from IPS to GPP is intended to transition payment
+
+14
+00:00:36,779 --> 00:00:38,572
+processing onto the target platform.
+
+15
+00:00:39,848 --> 00:00:42,849
+Once the payment reaches GPP, the platform processes it through a series of
+
+16
+00:00:42,889 --> 00:00:45,557
+steps. First, it receives the payment instruction.
+
+17
+00:00:45,597 --> 00:00:48,210
+Next, it performs validation to check whether the message and its business
+
+18
+00:00:48,250 --> 00:00:51,288
+data meet the required criteria. Configured business rules are then applied to
+
+19
+00:00:51,328 --> 00:00:53,008
+determine how the payment should be handled.
+
+20
+00:00:53,048 --> 00:00:55,646
+The transaction is subsequently routed for further processing.
+
+21
+00:00:55,686 --> 00:00:58,750
+Finally, the platform generates or updates payment statuses so that downstream
+
+22
+00:00:58,790 --> 00:01:01,132
+systems and operational teams can track what happened.
+
+23
+00:01:02,398 --> 00:01:06,778
+To understand GPP, it is also important to understand ISO 20022 messaging.
+
+24
+00:01:06,818 --> 00:01:09,754
+These messages provide a structured way for financial institutions to exchange
+
+25
+00:01:09,794 --> 00:01:13,101
+payment information. For example, pacs.008 is used for a financial
+
+26
+00:01:13,141 --> 00:01:16,480
+institution-to-financial institution customer credit transfer, while pacs.009
+
+27
+00:01:16,520 --> 00:01:19,407
+represents a financial institution-to-financial institution credit transfer.
+
+28
+00:01:19,447 --> 00:01:23,512
+pacs.002 communicates payment status, pacs.004 is used for payment returns,
+
+29
+00:01:23,552 --> 00:01:25,988
+and camt.056 is a payment cancellation request.
+
+30
+00:01:26,028 --> 00:01:28,528
+Understanding the purpose of each message helps a Business Analyst trace
+
+31
+00:01:28,568 --> 00:01:30,659
+payment journeys and investigate exceptions.
+
+32
+00:01:31,919 --> 00:01:34,512
+Another important concept is Nostro and Vostro accounts.
+
+33
+00:01:34,552 --> 00:01:37,225
+A Nostro account is our bank's account maintained with another bank.
+
+34
+00:01:37,265 --> 00:01:39,741
+A Vostro account is another bank's account maintained with us.
+
+35
+00:01:39,781 --> 00:01:42,281
+These accounts are important in correspondent banking and cross-border
+
+36
+00:01:42,321 --> 00:01:45,031
+settlement. Remember that sending a payment instruction and settling or
+
+37
+00:01:45,071 --> 00:01:48,235
+posting the funds are related, but they are not necessarily the same event.
+
+38
+00:01:49,501 --> 00:01:52,615
+But not every payment is successful. A transaction may fail validation or
+
+39
+00:01:52,655 --> 00:01:55,841
+encounter a processing exception. In such cases, the platform and surrounding
+
+40
+00:01:55,881 --> 00:01:59,470
+processes may generate a rejection status, such as a pacs.002, depending on
+
+41
+00:01:59,510 --> 00:02:02,857
+the applicable flow. This is where operational procedures become important.
+
+42
+00:02:02,897 --> 00:02:05,107
+A Business Analyst needs to understand what triggered the failure,
+
+43
+00:02:05,147 --> 00:02:07,744
+which system generated the status, what downstream impact occurred,
+
+44
+00:02:07,784 --> 00:02:09,940
+and how the exception is investigated and resolved.
+
+45
+00:02:11,201 --> 00:02:14,384
+To become effective in payments analysis, don't just memorise message names.
+
+46
+00:02:14,424 --> 00:02:17,409
+Understand the complete payment journey, how systems interact, how statuses
+
+47
+00:02:17,449 --> 00:02:19,465
+are generated and what happens when something goes wrong.
+
+48
+00:02:19,505 --> 00:02:22,207
+That is the foundation for understanding GPP from a Business Analyst's
+
+49
+00:02:22,247 --> 00:02:23,177
+perspective.
